@@ -1,0 +1,262 @@
+----------------------------------------------
+1. java project
+----------------------------------------------
+
+proj1
+|
+|--- p1 ( .java / .class )
+|
+|--- p2
+|
+|---p21
+
+----------------------------------------------
+2. java file
+----------------------------------------------
+
+
+PublicType.java
+|-------------------------------------------
+| // package declaration (one) (optional)
+| // import statements ( many ) (optional)
+| // public data-type ( inerface| class| enum | annotation) (one) (mandatory)
+| // other data-types ( many ) (optional)
+|
+|-------------------------------------------
+
+----------------------------------------------
+3. package
+----------------------------------------------
+
+why package?
+
+1. to organize the code ( by feature )
+2. to avoid name conflicts
+
+syntax:
+package p1.p2.p3;
+
+recommendation:
+package companyType.companyName.projectName.moduleName;
+package com.hsbc.em.empapp;
+
+----------------------------------------------
+4. import
+----------------------------------------------
+
+why import?
+
+1. to use classes from other packages
+
+e.g
+
+project1
+|
+|-- p1 ( A.java , B.java )
+|
+|-- p2 ( C.java , D.java )
+| |
+| |-- p21 ( E.java , F.java )
+
+A.java
+---------
+
+package p1;
+//import p2.C;
+//import p2.D;
+// or
+import p2.*;
+import p2.p21.*;
+public class A{
+    B b;
+    C c;
+    D d;
+    E e;
+}
+
+----------------------------------------------
+data types
+----------------------------------------------
+
+1. simple / primitive => values
+    byte (1 byte)
+    short (2 bytes)
+    int (4 bytes)
+    long (8 bytes)
+    float (4 bytes)
+    double (8 bytes)
+    char (2 bytes)
+    boolean (1 bit)
+
+2. user-defined / reference => objects
+    - interface
+    - class
+    - enum
+    - annotation
+
+----------------------------------------------
+
+What is an object?
+
+ -> data/properties/attributes/fields/info => state
+ -> functions/methods/actions => behavior
+ -> location/addres/reference => identity
+
+ obj => state + behavior + identity
+
+ What is a interface/class?
+
+    -> blueprint/template/plan for objects
+
+
+----------------------------------------------
+5. interface
+----------------------------------------------  
+
+why interface?
+
+1. to abstract object's behavior
+
+syntax:
+
+[access-modifier] interface InterfaceName{
+    // abstract methods
+    // constant variables
+}
+
+
+----------------------------------------------
+6. class
+----------------------------------------------
+
+why class?
+
+1. to define object's state and behavior
+
+syntax:
+
+[access-modifier] [class-modifiers] class ClassName [extends ParentClassName] [implements Interface1, Interface2, ...]{
+    // data members aka variables
+    // constructors
+    // methods
+    // inner types
+}
+
+class-modifiers:
+
+1. abstract
+2. final
+3. strictfp
+
+----------------------------------------------
+7. enum
+----------------------------------------------
+
+why enum?
+
+1. to define a group of constants
+
+syntax:
+
+[access-modifier] enum EnumName{
+    // constants
+}
+
+e.group of days, months, colors, etc
+
+----------------------------------------------
+8. annotation
+----------------------------------------------
+
+why annotation?
+
+1. to provide meta-data
+
+syntax:
+
+[access-modifier] @interface AnnotationName{
+    // elements
+}
+
+----------------------------------------------
+9. variables
+----------------------------------------------
+
+why variables?
+
+1. to store data
+
+syntax:
+
+[access-modifiers] [variables-modifiers] dataType varName = [value/obj's address];
+
+
+variables-modifiers:
+
+1. final
+2. static
+3. transient
+4. volatile
+
+----------------------------------------------
+10. methods
+----------------------------------------------
+
+why methods?
+
+1. to define  behavior 
+
+syntax:
+
+[access-modifiers] [method-modifiers] returnType methodName([parameters]){
+    // statements | expressions
+    // result
+}
+
+returnType:
+
+1. void
+2. primitive
+3. reference
+
+method-modifiers:
+
+1. abstract
+2. native
+3. static
+4. final
+5. synchronized
+6. strictfp
+
+----------------------------------------------
+11. constructors
+----------------------------------------------
+
+in java object is created in two steps:
+
+1. memory allocation (new)
+2. initialization (constructor)
+
+why constructor?
+
+1. to initialize object's state
+
+syntax:
+
+[access-modifiers] ClassName([parameters]){
+    // statements
+}
+
+ClassName c = new ClassName([parameters]);
+
+----------------------------------------------
+Java Naming Conventions
+----------------------------------------------
+
+1. package name => all lower-case
+2. Type names => pascalcase e.g A_____B_____C_____ e.g JavaEmployee
+3. variable/method names => camelCase e.g _____B_____C____ e.g javaEmployee
+4. constant names => all upper-case e.g JAVA_EMPLOYEE
+5. keyword => all lower-case e.g public, class, interface, etc
+
+----------------------------------------------
