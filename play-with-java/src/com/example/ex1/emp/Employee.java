@@ -1,6 +1,6 @@
 
 // package declaration
-package com.example.emp;
+package com.example.ex1.emp;
 
 // import statements
 //import java.lang.*;
@@ -10,7 +10,7 @@ package com.example.emp;
  */
 
 // public Type class
-public class Employee {
+public class Employee /*extends Object */{
 
     // variables
 
@@ -66,6 +66,12 @@ public class Employee {
     }
     public double getSalary(){
         return this.salary;
+    }
+
+    // to string
+
+    public String toString() {
+        return  "id=" + id + ", name=" + name + ", salary=" + salary;
     }
 
     // a. class/static methods
