@@ -19,32 +19,18 @@ public class Employee {
     public static String tnrName;
 
     // b. instance variables
-    public int id; // 0
-    public String name; // null
-    public double salary; // 0.0
+    private int id; // 0
+    private String name; // null
+    private double salary; // 0.0
 
     // constructors
     // public Employee(){}
     public Employee(int id) {
-//        if (id < 0) {
-//            throw new IllegalArgumentException("id can't be negative");
-//        }
-//        this.id = id;
         this(id, "Unknown", 0.0);
     }
-
     public Employee(int id, String name) {
-//        if (id < 0) {
-//            throw new IllegalArgumentException("id can't be negative");
-//        }
-//        if (name == null || name.isEmpty()) {
-//            throw new IllegalArgumentException("name can't be empty");
-//        }
-//        this.id = id;
-//        this.name = name;
         this(id, name, 0.0);
     }
-
     public Employee(int id, String name, double salary) {
         if (id < 0) {
             throw new IllegalArgumentException("id can't be negative");
@@ -61,6 +47,27 @@ public class Employee {
     }
 
     // methods
+
+    // accessor methods ( set / get )
+    public int getId(){
+        return this.id;
+    }
+    public void setName(String name){
+        if(name==null||name.isEmpty())
+            throw new IllegalArgumentException("invalid name");
+        this.name=name;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public void setSalary(double salary){
+        // check if it valid
+        this.salary=salary;
+    }
+    public double getSalary(){
+        return this.salary;
+    }
+
     // a. class/static methods
     public static void doTeach() {
         System.out.println("Teaching...");
@@ -73,9 +80,3 @@ public class Employee {
 
 }
 
-// other types
-class Foo {
-}
-
-class Bar {
-}
