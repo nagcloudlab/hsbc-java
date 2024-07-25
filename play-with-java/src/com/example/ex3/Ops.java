@@ -3,9 +3,9 @@ package com.example.ex3;
 public class Ops extends Employee {
 
     // Fields
-    private int id;
-    private String name;
-    private double salary;
+//    private int id;
+//    private String name;
+//    private double salary;
     private String opsSkills;
 
     // Constructor
