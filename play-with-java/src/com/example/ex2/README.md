@@ -1,4 +1,3 @@
-
     design issues
 
     -> tight-coupling b/w dependent & dependency
@@ -19,13 +18,29 @@
 
      -> Don't create dependency in dependent's class,
         get from factory, and abstract dependency via interface
-     
+
         problem: dependent should know from which factory,
                  the dependency available
-        
-    How to fix performance issues?    
+
+    How to fix performance issues?
 
     -> Dont't get/find object from factory directly,
-       inject by 'some-one' 
+       inject by 'some-one'
 
+---
 
+## Object concepts
+
+- Abstraction
+- Encapsulation
+- polymorphism
+- inheritance
+
+## Object Design Principles
+
+- SOLID
+  - Single Responsibility Principle
+  - Open for extension/Closed for modification Principle
+  - Liskov Substitution Principle
+  - Interface Segregation Principle
+  - Dependency Inversion Principle ( dependency injection )
