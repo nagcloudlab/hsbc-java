@@ -21,9 +21,10 @@ import com.example.ex2.pm.PriceMatrixFactory;
 
       -> dependent itself creating its own dependency
 
-     How to fix ?
+     How to fix design issues?
 
-     -> Don't create dependency in dependent's class, get from factory
+     -> Don't create dependency in dependent's class,
+        get from factory, and abstract dependency via interface
 
 
  */
