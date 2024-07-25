@@ -5,14 +5,23 @@ import com.example.ex2.wheel.Wheel;
 import com.example.ex2.wheel.WheelFactory;
 
 public class Car {
-    public Car() {
+
+    private Wheel wheel;
+
+    public Car(Wheel wheel) {
+        this.wheel = wheel;
         System.out.println("Car object created");
     }
 
+    public void setWheel(Wheel wheel) {
+        this.wheel = wheel;
+    }
+
+
     public void move() {
-//        MRFWheel wheel = new MRFWheel();
-        Wheel wheel = WheelFactory.getWheel("CEAT");
-//        wheel.rotate();
+        // MRFWheel wheel = new MRFWheel();
+        // Wheel wheel = WheelFactory.getWheel("CEAT");
+        wheel.rotate(100);
         System.out.println("Car moving");
     }
 }
