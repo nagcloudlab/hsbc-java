@@ -17,6 +17,19 @@ public class LinkedList {
         }
     }
 
+    public void reverse() {
+        Node current = head;
+        Node prev = null;
+        Node next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
+
     public int get(int index) {
         Node current = head;
         for (int i = 0; i < index; i++) {
