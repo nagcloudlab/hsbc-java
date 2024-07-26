@@ -100,6 +100,22 @@ public class Ex3 {
         // strip removes all white spaces
         // trim removes only leading and trailing white spaces
 
+        // .lines
+        // returns a stream of lines extracted from the string
+        //String s11 = "abc\ndef\nghi";
+        //s11.lines().forEach(line-> System.out.println(line);
+
+        // stripLeading
+        // removes leading white spaces
+        String s14 = "  abc";
+        System.out.println(s14.stripLeading());
+
+        // stripTrailing
+        // removes trailing white spaces
+        String s15 = "abc  ";
+        System.out.println(s15.stripTrailing());
+
+
 
     }
 
