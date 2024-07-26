@@ -6,3 +6,4 @@ ex3 : inheritance
 ex4 : variables
 ex5 : methods
 ex6 : interface vs abstract class
+ex7 : access modifiers
