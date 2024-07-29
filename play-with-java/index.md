@@ -11,5 +11,6 @@ ex8 : how to manage strings in java
 ex9 : java new features
         - interface with default, static and private methods ( java 8 )
         - records ( java 14 )
-        - sealed classes ( java 17 )
+        - sealed classes/interfaces ( java 17 )
         
+ex10: Nested types
