@@ -8,3 +8,4 @@ ex5 : methods
 ex6 : interface vs abstract class
 ex7 : access modifiers
 ex8 : how to manage strings in java
+ex9 : interface
