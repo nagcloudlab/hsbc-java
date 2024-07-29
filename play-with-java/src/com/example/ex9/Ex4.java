@@ -32,7 +32,7 @@ package com.example.ex9;
     -> a record class is a serializable class
     -> a record class is a comparable class
     -> a record class is a toString class
-    -> a record class is a equals and hashcode class
+    -> a record class has equals and hashcode class
     -> a record class is a getter class
 
 
@@ -92,12 +92,13 @@ record Employee(int id, String name, double salary) implements Comparable<Employ
     }
 }
 
+// reference : https://www.baeldung.com/java-record-keyword
+
 public class Ex4 {
     public static void main(String[] args) {
 
         Employee emp1 = new Employee(1, "A", 10000);
         Employee emp2 = new Employee(1, "B", 20000);
-
 
         System.out.println(emp1 == emp2); // false
         System.out.println(emp1.equals(emp2)); // false
