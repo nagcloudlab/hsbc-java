@@ -13,4 +13,4 @@ ex9 : java new features
         - records ( java 14 )
         - sealed classes/interfaces ( java 17 )
         
-ex10: Nested types
+ex10: Layered architecture
