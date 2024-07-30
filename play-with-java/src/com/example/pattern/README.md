@@ -1,5 +1,6 @@
 
 
+https://nagcloudlab.notion.site/Object-Design-Patterns-67a20c31da0d425fa1628118b60487ff?pvs=4
 
 Object
 
