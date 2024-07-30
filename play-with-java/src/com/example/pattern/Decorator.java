@@ -1,5 +1,9 @@
 package com.example.pattern;
 
+/**
+ *`* Created by NAG on 2018-07-21
+ */
+
 /*
     Decorator Pattern
     - Attach additional responsibilities to an object dynamically.
@@ -10,6 +14,7 @@ package com.example.pattern;
  */
 
 // Component
+// Interface for objects that can have responsibilities added to them dynamically.
 interface Car {
     void assemble();
 }
