@@ -23,11 +23,9 @@ class ATMHandler extends Handler {
     public void handleRequest(int amount) {
         int notes = amount / denomination;
         int remainingAmount = amount % denomination;
-
         if (notes > 0) {
             System.out.println(notes + " notes of " + denomination);
         }
-
         if (remainingAmount > 0 && nextHandler != null) {
             nextHandler.handleRequest(remainingAmount);
         }
