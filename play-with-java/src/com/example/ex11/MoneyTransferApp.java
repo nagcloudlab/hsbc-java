@@ -21,6 +21,7 @@ class Account {
         this.balance = balance;
     }
 }
+
 //----------------------------------------
 //data/repo layer
 //----------------------------------------
@@ -34,16 +35,24 @@ class SqlAccountRepository {
         // database logic
     }
 }
+
 //----------------------------------------
 //Exception Classes
 //----------------------------------------
-class NotEnoughBalanceException extends Throwable {
-    String message;
+// checked exception
+class NotEnoughBalanceException extends Exception {
+    private String message;
 
     public NotEnoughBalanceException(String message) {
         this.message = message;
     }
+
+    public String getMessage() {
+        return message;
+    }
+
 }
+
 //----------------------------------------
 //service layer
 //----------------------------------------
@@ -55,9 +64,13 @@ class UPIPaymentService {
         this.accountRepository = accountRepository;
     }
 
-    public boolean transfer(String from, String to, double amount) throws NotEnoughBalanceException {
+    public boolean transfer(String from, String to, double amount) throws NotEnoughBalanceException,IllegalArgumentException {
 
         System.out.println("Transfer initiated");
+
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount should be greater than zero");
+        }
 
         Account fromAccount = accountRepository.load(from);
         Account toAccount = accountRepository.load(to);
@@ -75,14 +88,14 @@ class UPIPaymentService {
     }
 }
 
-public class Application {
+public class MoneyTransferApp {
     public static void main(String[] args) {
 
         SqlAccountRepository accountRepository = new SqlAccountRepository();
         UPIPaymentService upiPaymentService = new UPIPaymentService(accountRepository);
         try {
             boolean b = upiPaymentService.transfer("1", "2", 2000);
-        }catch (NotEnoughBalanceException e){
+        } catch (NotEnoughBalanceException | IllegalArgumentException e) {
             // how to handle exception
             // friendly message to user
             // send email to admin
@@ -91,10 +104,10 @@ public class Application {
             // re-throws exception
             // convert exception to another exception
             // release resources
-            // close connections
+            System.out.println("Transfer failed, reason: " + e.getMessage());
 
-            System.out.println("Transfer failed, reason: " + e.message);
-
+        }catch (Exception e){
+            System.out.println("Something went wrong, please try again later");
         }
 
 
