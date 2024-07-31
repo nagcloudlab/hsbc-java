@@ -14,3 +14,4 @@ ex9 : java new features
         - sealed classes/interfaces ( java 17 )
         
 ex10: Layered architecture
+ex11: Exceptions

@@ -66,7 +66,8 @@ class ShortestDurationPlayListStrategy implements PlayListStrategy {
     }
 }
 
-// Open-Closed Principle
+
+// Context
 class PlayList {
 
     private ArrayList<Track> tracks = new ArrayList<>();
@@ -86,7 +87,7 @@ class PlayList {
 }
 
 
-public class Ex {
+public class Strategy {
 
     public static void main(String[] args) {
 
