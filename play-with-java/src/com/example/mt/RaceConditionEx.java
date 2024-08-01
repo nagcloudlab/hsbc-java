@@ -4,7 +4,7 @@ package com.example.mt;
 class Counter {
     private long count = 0;
 
-    public synchronized void increment() {
+    public void increment() {
         // read count from memory
         // increment count
         // write count back to memory
