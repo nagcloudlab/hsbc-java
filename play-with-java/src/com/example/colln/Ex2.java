@@ -94,14 +94,11 @@ class LinkedList<T> implements Iterable<T> {
 public class Ex2 {
     public static void main(String[] args) {
 
-
 //        Trainer<Java> javaTrainer = new Trainer<>();
 //        javaTrainer.setSubject(new Java());
 //
 //        Trainer<Python> pythonTrainer = new Trainer<>();
 //        pythonTrainer.setSubject(new Python());
-
-        //Trainer<String> stringTrainer = new Trainer<>();
 
 
         LinkedList<String> list = new LinkedList<>();
@@ -112,18 +109,18 @@ public class Ex2 {
         list.add("Five");
         list.add("Six");
 
-        //
-
+        //way-1
 //        for (int i = 0; i < list.size(); i++) {
 //            System.out.println(list.get(i));
 //        }
 
-
+        //way-2
         Iterator<String> iterator = list.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
 
+        // way-3
         // for each loop ( enhanced for loop ) java 5
         for (String s : list) {
             System.out.println(s);
