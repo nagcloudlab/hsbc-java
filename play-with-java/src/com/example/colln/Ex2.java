@@ -1,5 +1,6 @@
 package com.example.colln;
 
+import java.util.Iterator;
 import java.util.List;
 
 interface Subject {
@@ -23,8 +24,11 @@ class Trainer<S extends Subject> {
     }
 }
 
+// data structure/collection + iterator
+// iterator = how to iterate over the elements of a collection
+// collection + iterator = Iterable
 
-class LinkedList<T> {
+class LinkedList<T> implements Iterable<T> {
     private Node<T> head;
 
     public void add(T data) {
@@ -40,12 +44,40 @@ class LinkedList<T> {
         }
     }
 
-    public void display() {
+    public int size() {
+        int count = 0;
         Node<T> temp = head;
         while (temp != null) {
-            System.out.println(temp.data);
+            count++;
             temp = temp.next;
         }
+        return count;
+    }
+
+    public T get(int index) {
+        Node<T> temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp.data;
+    }
+
+    public Iterator<T> iterator() {
+        return new Iterator() {
+            private Node<T> temp = head;
+
+            @Override
+            public boolean hasNext() {
+                return temp != null;
+            }
+
+            @Override
+            public T next() {
+                T data = temp.data;
+                temp = temp.next;
+                return data;
+            }
+        };
     }
 
     private static class Node<T> {
@@ -63,22 +95,39 @@ public class Ex2 {
     public static void main(String[] args) {
 
 
-        Trainer<Java> javaTrainer = new Trainer<>();
-        javaTrainer.setSubject(new Java());
-
-
-        Trainer<Python> pythonTrainer = new Trainer<>();
-        pythonTrainer.setSubject(new Python());
+//        Trainer<Java> javaTrainer = new Trainer<>();
+//        javaTrainer.setSubject(new Java());
+//
+//        Trainer<Python> pythonTrainer = new Trainer<>();
+//        pythonTrainer.setSubject(new Python());
 
         //Trainer<String> stringTrainer = new Trainer<>();
+
 
         LinkedList<String> list = new LinkedList<>();
         list.add("One");
         list.add("Two");
+        list.add("Three");
+        list.add("Four");
+        list.add("Five");
+        list.add("Six");
 
-        LinkedList<Integer> list2 = new LinkedList<>();
-        list2.add(1);
-        list2.add(2);
+        //
+
+//        for (int i = 0; i < list.size(); i++) {
+//            System.out.println(list.get(i));
+//        }
+
+
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        // for each loop ( enhanced for loop ) java 5
+        for (String s : list) {
+            System.out.println(s);
+        }
 
 
     }
