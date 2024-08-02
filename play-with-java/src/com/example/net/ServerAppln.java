@@ -12,21 +12,39 @@ public class ServerAppln {
             while (true) {
                 Socket socket = serverSocket.accept();
                 System.out.println("Client connected: " + socket.getInetAddress());
-                BufferedReader reader = new BufferedReader(
-                        new InputStreamReader(socket.getInputStream()));
-                PrintWriter writer = new PrintWriter(
-                        new OutputStreamWriter(socket.getOutputStream()));
-                String line = "";
-                while (!"/quit".equals(line)) {
-                    line = reader.readLine();
-                    System.out.println("~ " + line);
-                    writer.write(line + "\n");
-                    writer.flush();
-                }
+                Thread thread = new Thread(new ConnectionHandler(socket));
+                thread.start();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+    }
+}
+
+
+class ConnectionHandler implements Runnable {
+    private Socket socket;
+    public ConnectionHandler(Socket socket) {
+        this.socket = socket;
+    }
+    @Override
+    public void run() {
+        try {
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(socket.getInputStream()));
+            PrintWriter writer = new PrintWriter(
+                    new OutputStreamWriter(socket.getOutputStream()));
+
+            String line = "";
+            while (!"/quit".equals(line)) {
+                line = reader.readLine();
+                writer.write("You said: " + line + "\n");
+                writer.flush();
+            }
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

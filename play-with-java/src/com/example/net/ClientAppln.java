@@ -12,7 +12,6 @@ public class ClientAppln {
     public static void main(String[] args) {
         try {
             Socket socket = new Socket("localhost", 8080);
-            System.out.println("Connected to server");
 
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
