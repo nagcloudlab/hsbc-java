@@ -7,11 +7,12 @@ import com.example.colln.model.Apple;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
-
-interface Predicate {
-    boolean test(Apple apple);
-}
+//
+//interface Predicate {
+//    boolean test(Apple apple);
+//}
 
 public class Ex1 {
 
@@ -29,21 +30,27 @@ public class Ex1 {
                 //filterGreenApples(inventory)
                 //filterApplesByColor(inventory, "green")
                 //filterApples(inventory, "green",0)
-                filterApples(inventory, new Predicate() {
-                    public boolean test(Apple apple) {
-                        return apple.getColor().equals("green");
-                    }
+//                filterApples(inventory, new Predicate() {
+//                    public boolean test(Apple apple) {
+//                        return apple.getColor().equals("green");
+//                    }
+//                })
+                filterApples(inventory, (Apple apple) -> {
+                    return apple.getColor().equals("green");
                 })
         );
         // Req-2: Filter all red apples
         System.out.println(
                 //filterRedApples(inventory)
                 //filterApplesByColor(inventory, "red")
-                filterApples(inventory, new Predicate() {
-                    @Override
-                    public boolean test(Apple apple) {
-                        return apple.getColor().equals("red");
-                    }
+//                filterApples(inventory, new Predicate() {
+//                    @Override
+//                    public boolean test(Apple apple) {
+//                        return apple.getColor().equals("red");
+//                    }
+//                })
+                filterApples(inventory, (Apple apple) -> {
+                    return apple.getColor().equals("red");
                 })
         );
 
@@ -52,19 +59,26 @@ public class Ex1 {
         System.out.println(
                 //filterApplesByWeight(inventory, 150)
                 //filterApples(inventory, null, 150)
-                filterApples(inventory, new Predicate() {
-                    @Override
-                    public boolean test(Apple apple) {
-                        return apple.getWeight() == 150;
-                    }
-                })
+//                filterApples(inventory, new Predicate() {
+//                    @Override
+//                    public boolean test(Apple apple) {
+//                        return apple.getWeight() == 150;
+//                    }
+//                })
+
+                filterApples(inventory, apple -> apple.getWeight() == 150)
+        );
+
+        // Req-4: Filter all apples by color=red and weight=150
+
+        System.out.println(
+                filterApples(inventory, apple -> apple.getColor().equals("red") && apple.getWeight() == 150)
         );
 
 
     }
 
-
-    public static List<Apple> filterApples(List<Apple> inventory, Predicate o) {
+    public static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> o) {
         List<Apple> result = new ArrayList<>();
         for (Apple apple : inventory) {
             if (o.test(apple)) {

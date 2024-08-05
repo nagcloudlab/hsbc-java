@@ -15,3 +15,24 @@ style of programming
     separation of intention ( What) & implementation ( How )    
 
     - by primitive/obj params
+    - by functions ( Function as first class citizen )
+
+
+--------------------------------------------------
+
+
+
+class WeightPredicate implements Predicate {
+    public boolean test(Apple apple) {
+        return apple.getWeight() > 150;
+    }
+}
+Predicate p = new WeightPredicate();
+
+
+// java 1.8
+
+
+Predicate p = (Apple apple) -> {
+return apple.getWeight() > 150;
+}
