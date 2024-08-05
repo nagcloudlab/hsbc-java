@@ -2,16 +2,16 @@ package com.example.colln;
 
 import com.example.colln.model.Employee;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.LinkedList;
 
 public class Ex6 {
     public static void main(String[] args) {
 
 
+//        List<Employee> employees = new Vector<>();
         List<Employee> employees = new ArrayList<>();
+//        List<Employee> employees = new LinkedList<>();
         employees.add(new Employee(101, "John", 10000));
         employees.add(new Employee(102, "Scott", 20000));
         employees.add(new Employee(103, "Smith", 15000));
