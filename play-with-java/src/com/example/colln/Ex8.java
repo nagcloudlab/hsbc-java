@@ -30,7 +30,7 @@ public class Ex8 {
 
 
         // 1. hashcode is used to find the bucket
-        // 2. equals is used to find the object in the bucket
+        // 2. equals is used to find the object in the bucket (i.e are the duplicates)
         // 3. if hashcode is different, then equals is not called
         // 4. if hashcode is same, then equals is called
         // 5. if equals is true, then object is not added
@@ -39,8 +39,8 @@ public class Ex8 {
         // 8. if equals is overridden, then it uses the overridden implementation
 
 
-        //Set<String> names = new java.util.HashSet<>();
-        Set<String> names = new java.util.LinkedHashSet<>();
+        Set<String> names = new java.util.HashSet<>(32, 0.75f);
+//        Set<String> names = new java.util.LinkedHashSet<>();
         names.add(("B"));
         names.add(("Q"));
         names.add(("P"));
