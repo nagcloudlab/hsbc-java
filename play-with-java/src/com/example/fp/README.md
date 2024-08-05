@@ -20,8 +20,7 @@ style of programming
 
 --------------------------------------------------
 
-
-
+before 1.8
 class WeightPredicate implements Predicate {
     public boolean test(Apple apple) {
         return apple.getWeight() > 150;
@@ -30,9 +29,18 @@ class WeightPredicate implements Predicate {
 Predicate p = new WeightPredicate();
 
 
-// java 1.8
-
+// from java 1.8
 
 Predicate p = (Apple apple) -> {
 return apple.getWeight() > 150;
 }
+
+--------------------------------------------------
+
+
+Why we need LE in Java ?
+
+    -> to write compact/concise code
+
+
+--------------------------------------------------
