@@ -86,3 +86,112 @@ Purpose: Used to define an external ordering of objects.
 Method: compare(T o1, T o2)
 Implementation: A separate class implements the Comparator interface.
 Usage: Suitable when you want to define multiple sorting orders or when you cannot modify the class whose objects you want to sort.
+
+
+
+When to use Which  collection in Java?
+------------------------------------------------------------
+
+
+1. Vector
+   
+   - dynamic array
+   - synchronized list ( thread-safe )
+   - slow
+ 
+2. ArrayList
+   
+   - dynamic array
+   - non-synchronized list ( not thread-safe )
+   - fast
+
+3. LinkedList
+
+    - doubly linked list
+    - non-synchronized list ( not thread-safe )
+    - fast for add and remove operations
+
+4. Stack
+
+    - LIFO ( Last In First Out )
+    - extends Vector class
+
+5. PriorityQueue
+
+    - heap
+    - unbounded queue
+    - ordered by the elements' natural ordering or by a Comparator provided at queue construction time
+
+6. ArrayDeque
+
+    - resizable array
+    - faster than Stack and LinkedList
+
+7. HashSet
+
+    - hashtable
+    - unordered
+    - no duplicate elements
+
+8. LinkedHashSet
+
+    - hashtable + linked list
+    - ordered
+    - no duplicate elements
+
+9. TreeSet
+
+    - Red-Black tree
+    - sorted
+    - no duplicate elements
+
+10. HashMap
+
+    - hashtable
+    - unordered
+    - no duplicate keys
+
+11. LinkedHashMap
+
+    - hashtable + linked list
+    - ordered
+    - no duplicate keys
+
+12. TreeMap
+
+    - Red-Black tree
+    - sorted
+    - no duplicate keys
+
+13. HashTable
+
+    - hashtable
+    - synchronized
+    - no null key or value
+
+14. Properties
+
+    - hashtable
+    - key and value are string
+    - used to store configuration data
+
+------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

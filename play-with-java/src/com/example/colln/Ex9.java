@@ -6,10 +6,7 @@ package com.example.colln;
 import com.example.colln.model.Car;
 import com.example.colln.model.Owner;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Ex9 {
 
@@ -21,8 +18,9 @@ public class Ex9 {
         Car car1 = new Car("Audi", "A4", 2018);
         Car car2 = new Car("BMW", "X1", 2019);
 
-        Map<Owner, Car> map = new HashMap<>();
+        //Map<Owner, Car> map = new HashMap<>();
         //Map<Owner, Car> map = new LinkedHashMap<>();
+        Map<Owner, Car> map = new TreeMap<>();
         map.put(owner1, car1);
         map.put(owner2, car2);
 

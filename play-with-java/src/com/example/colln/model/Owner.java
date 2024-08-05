@@ -1,6 +1,6 @@
 package com.example.colln.model;
 
-public class Owner {
+public class Owner implements Comparable<Owner> {
     private String name;
     private String address;
 
@@ -22,6 +22,11 @@ public class Owner {
             return this.name.equals(other.name);
         }
         return false;
+    }
+
+    @Override
+    public int compareTo(Owner other) {
+        return this.name.compareTo(other.name);
     }
 
     public String toString() {
