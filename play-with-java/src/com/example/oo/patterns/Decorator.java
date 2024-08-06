@@ -72,13 +72,17 @@ public class Decorator {
     public static void main(String[] args){
 
         Car basicCar = new BasicCar();
+//        System.out.println(basicCar.i);
+
         basicCar.assemble();
 
-        //CarWithCarStereo carWithCarStereo = new CarWithCarStereo(basicCar);
+        CarWithCarStereo carWithCarStereo = new CarWithCarStereo(basicCar);
         //carWithCarStereo.assemble();
 
-        //CarWithAirConditioning carWithCarStereoWithAirConditioning = new CarWithAirConditioning(carWithCarStereo);
-        //carWithCarStereoWithAirConditioning.assemble();
+        CarWithAirConditioning carWithCarStereoWithAirConditioning = new CarWithAirConditioning(carWithCarStereo);
+        carWithCarStereoWithAirConditioning.assemble();
+
+
 
 
         //Java Api Example using Decorator Pattern
