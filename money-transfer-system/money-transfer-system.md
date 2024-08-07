@@ -55,6 +55,16 @@ tables :
   insert into accounts values (1, 1000);
   insert into accounts values (2, 2000);
 
+
+create table transactions (
+  transaction_id int primary key,
+  account_number int,
+  amount double,
+  transaction_type varchar(10),
+  transaction_date timestamp
+);
+
+
 ```
 
 ---
