@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.model.TransactionType;
 import com.example.repository.AccountRepository;
 import com.example.repository.JdbcAccountRepository;
 import com.example.repository.JdbcTransactionHistoryRepository;
@@ -25,8 +26,14 @@ public class Application {
         // Use phase
         //------------------------------------
 
-        upiTransferService.transfer(1, 2, 200);
+        upiTransferService.transfer(1, 2, 400);
         System.out.println("✅");
+
+//
+//        transactionHistoryRepository.findAll()
+//                .stream()
+//                .filter(transaction -> transaction.getTransactionType().equals(TransactionType.DEBIT))
+//                .forEach(System.out::println);
 
     }
 
