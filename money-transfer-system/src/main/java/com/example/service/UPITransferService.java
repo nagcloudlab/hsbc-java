@@ -1,5 +1,7 @@
 package com.example.service;
 
+import com.example.exception.AccountBalanceException;
+import com.example.exception.AccountNotFoundException;
 import com.example.model.Account;
 import com.example.model.Transaction;
 import com.example.model.TransactionType;
@@ -23,9 +25,14 @@ public class UPITransferService implements TransferService {
 
         // step-1: Load source account
         Account sourceAccount = accountRepository.findAccount(sourceAccNumber);
+        if(sourceAccount==null)
+            throw new AccountNotFoundException("Account not found with account number: "+sourceAccNumber);
        // step-2: Load destination account
         Account destinationAccount = accountRepository.findAccount(destinationAccNumber);
-
+        if (destinationAccount == null)
+            throw new AccountNotFoundException("Account not found with account number: "+destinationAccNumber);
+        if(sourceAccount.getBalance() < amount)
+            throw new AccountBalanceException("Insufficient balance in account: "+sourceAccNumber);
         // step-3: debit source account
         sourceAccount.setBalance(sourceAccount.getBalance() - amount);
         // step-4: credit destination account

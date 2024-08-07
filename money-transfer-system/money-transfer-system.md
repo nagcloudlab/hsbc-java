@@ -61,7 +61,8 @@ create table transactions (
   account_number int,
   amount double,
   transaction_type varchar(10),
-  transaction_date timestamp
+  transaction_date timestamp,
+  foreign key (account_number) references accounts(account_number)
 );
 
 

@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import com.example.db.MySqlConnectionFactory;
+import com.example.exception.DatabaseException;
 import com.example.model.Account;
 
 import java.sql.*; // JDBC Api
@@ -28,6 +29,7 @@ public class JdbcAccountRepository implements AccountRepository {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new DatabaseException("Error while fetching account details");
         } finally {
             try {
                 connection.close();
@@ -55,6 +57,7 @@ public class JdbcAccountRepository implements AccountRepository {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new DatabaseException("Error while updating account details");
         } finally {
             try {
                 connection.close();

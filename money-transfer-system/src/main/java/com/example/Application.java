@@ -1,5 +1,8 @@
 package com.example;
 
+import com.example.exception.AccountBalanceException;
+import com.example.exception.AccountNotFoundException;
+import com.example.exception.DatabaseException;
 import com.example.model.TransactionType;
 import com.example.repository.AccountRepository;
 import com.example.repository.JdbcAccountRepository;
@@ -26,14 +29,31 @@ public class Application {
         // Use phase
         //------------------------------------
 
-        upiTransferService.transfer(1, 2, 400);
-        System.out.println("✅");
+        try {
+
+            upiTransferService.transfer(11, 2, 400);
+            System.out.println("✅");
 
 //
 //        transactionHistoryRepository.findAll()
 //                .stream()
 //                .filter(transaction -> transaction.getTransactionType().equals(TransactionType.DEBIT))
 //                .forEach(System.out::println);
+
+
+        } catch (DatabaseException e) {
+            System.out.println("❌");
+            System.out.println(e.getMessage());
+        } catch (AccountNotFoundException e) {
+            System.out.println("❌");
+            System.out.println(e.getMessage());
+        } catch (AccountBalanceException e) {
+            System.out.println("❌");
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("❌");
+            System.out.println("Something went wrong");
+        }
 
     }
 

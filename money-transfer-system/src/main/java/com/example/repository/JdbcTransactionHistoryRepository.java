@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import com.example.db.MySqlConnectionFactory;
+import com.example.exception.DatabaseException;
 import com.example.model.Account;
 import com.example.model.Transaction;
 import com.example.model.TransactionType;
@@ -76,6 +77,7 @@ public class JdbcTransactionHistoryRepository implements TransactionHistoryRepos
 
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new DatabaseException("Error while fetching transaction history");
         } finally {
             try {
                 connection.close();
