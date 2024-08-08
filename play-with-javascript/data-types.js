@@ -117,6 +117,20 @@ var fruits = new Array("apple", "banana", "mango");
 
 var fruits = ["apple", "banana", "mango"];
 
+// Set
+
+let mySet = new Set();
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+mySet.add(1);
+
+// Map
+
+let myMap = new Map();
+myMap.set("name", "John Doe");
+myMap.set("age", 25);
+
 // RegExp
 
 // aadhar card number - 12 digits ( 4-4-4 )
@@ -156,17 +170,3 @@ console.log(p.name);
 
 console.log(p["name"]);
 console.log(p["home address"]);
-
-// Set
-
-let mySet = new Set();
-mySet.add(1);
-mySet.add(2);
-mySet.add(3);
-mySet.add(1);
-
-// Map
-
-let myMap = new Map();
-myMap.set("name", "John Doe");
-myMap.set("age", 25);
