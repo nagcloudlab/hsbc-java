@@ -13,7 +13,7 @@ import com.example.service.UPITransferService;
 
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String ...args) {
 
 
         //------------------------------------

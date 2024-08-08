@@ -17,8 +17,6 @@ scope
         any variable declared with var keyword 
         is hoisted to the top of the function whit undefined value
 
-
-
         every function invocation creates a new scope,
         which child in which scope that function is defined
 
