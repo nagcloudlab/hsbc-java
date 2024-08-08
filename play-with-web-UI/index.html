@@ -12,7 +12,31 @@
   <body class="container">
     <div class="display-1">Play With Web UI</div>
     <hr />
+    <div class="">
+      <button id="top5-todos-btn" class="btn btn-dark">Load top-5 todos</button>
+      <select id="todos-select" class="form-select mt-2">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+      </select>
+      <input placeholder="How many todos?" />
+    </div>
+    <hr />
 
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Completed</th>
+        </tr>
+      </thead>
+      <tbody id="todos"></tbody>
+    </table>
+
+    <hr />
     <div class="row">
       <div class="col-md-6">
         <div class="card">
