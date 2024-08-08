@@ -1,0 +1,33 @@
+
+
+
+
+why we need javascript on HTML-page?
+
+
+using browser provide Apis, 
+javascript can bring magic to HTML page
+
+browser- Apis -> w3c recommendations
+
+-> DOM,XHR/Fetch,Timer,Storage,Canvas,Audio/Video,Websocket,SVG,Geolocation,Notification,ServiceWorker,WebRTC,WebAssembly,WebGL,IndexedDB,FileAPI,Drag&Drop,History,WebWorkers,WebComponents,etc
+
+Using DOM Api, we can interact with HTML elements
+---------------------------------------------------
+ -> to create,retrieve,update,delete the HTML elements
+ -> to change innerHTML/innerText of HTML elements
+ -> to change the style of HTML elements
+ -> to change the attribute of HTML elements
+ -> to add event listeners to HTML elements
+ -> to validate the form data
+
+Using XHR/Fetch Api, we can interact with server-side code
+----------------------------------------------------------
+ -> to communicate with the server-side code
+
+Using Timer Api, we can schedule the tasks
+------------------------------------------
+ -> to execute the tasks at a specific time
+ -> to execute the tasks at regular intervals
+
+ 
