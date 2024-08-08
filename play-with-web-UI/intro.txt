@@ -1,0 +1,74 @@
+
+UI = data + style + iteraction
+Web-UI = HTML + CSS + JavaScript 
+
+
+
+
+Web Servers
+------------
+
+    1. Apache Http Server
+    2. Nginx
+    3. IIS (Internet Information Services)
+    ...
+
+
+
+
+Why we need JavaScript programming language ?       
+
+
+-> to develop Web-ui applications ( browser )
+-> to develop backend applications ( Node.js )
+-> to command-line applications ( Node.js )
+-> to develop mobile applications ( React Native, Native Script )
+-> to develop desktop applications ( Electron.js )
+
+
+JavaScript language features
+
+ 1. dynamic typing
+ 2. first-class functions
+ 3. non-blocking I/O
+ 4. single-threaded ( due to non-blocking I/O, high performance )
+    https://latentflip.com/loupe
+
+
+------------------------------------------------------------
+JavaScript is based on ECMAScript standard
+------------------------------------------------------------
+
+latest version: ECMAScript 2018 (ES9)
+
+
+------------------------------------------------------------
+
+
+Hello World in JavaScript
+
+    console.log("Hello World");
+
+
+
+how to run JavaScript code ?
+
+   - js-enging / interpreter
+
+
+browser envi
+-------------
+
+
+1. chrome - V8 ( c++ )
+2. firefox - SpiderMonkey ( c++ )
+3. safari - JavaScriptCore ( c++ )
+4. edge - Chakra ( c++ )
+
+Other Envi
+------------
+
+1. Node.js - V8 ( c++ )
+2. JVM - Nashorn ( java )
+...
+
