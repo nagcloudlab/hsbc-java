@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page import="java.time.LocalDateTime" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,6 +23,13 @@
     </li>
 </ul>
 <hr/>
+
+Time Now : <%=LocalDateTime.now()  %>
+
+<div class="alert alert-info">
+    <%=request.getAttribute("message") %>
+</div>
+
 
 </body>
 </html>
