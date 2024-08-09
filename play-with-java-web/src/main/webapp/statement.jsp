@@ -46,7 +46,7 @@
         %>
         <tr>
         <td><%=transaction.getTransactionId()%></td>
-        <td><%=transaction.getAmount()%></td>
+        <td> &#8377; <%=transaction.getAmount()%></td>
         <td><%=transaction.getTransactionType()%></td>
         <td><%=transaction.getTransactionDate()%></td>
         <td><%=transaction.getAccount().getAccountNumber()%></td>
