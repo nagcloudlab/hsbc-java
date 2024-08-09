@@ -2,13 +2,25 @@
 // using DOM Api + XHR (XMLHttpRequest) / Fetch Api
 //-------------------------------------------------
 
-const top5TodosBtn = document.querySelector("#top5-todos-btn");
+const todos5Btn = document.querySelector("#todos-5-btn");
+const todosCountList = document.querySelector("#todos-count-list");
+const todosCountInp = document.querySelector("#todos-count-inp");
+
 const todosTableBody = document.querySelector("#todos");
 
-top5TodosBtn.addEventListener("click", (e) => {
-  //loadTodosV1();
+todos5Btn.addEventListener("click", (e) => {
+  // loadTodosV1();
   // loadTodosV2();
-  loadTodosV3();
+  // loadTodosV3();
+  loadTodosV3(5);
+});
+todosCountList.addEventListener("change", (e) => {
+  const count = parseInt(e.target.value);
+  loadTodosV3(count);
+});
+todosCountInp.addEventListener("blur", (e) => {
+  const count = parseInt(e.target.value);
+  loadTodosV3(count);
 });
 
 // Using XHR Api
@@ -42,7 +54,6 @@ function loadTodosV1() {
     }
   };
 }
-
 // Using Fetch Api
 function loadTodosV2() {
   const url = "https://jsonplaceholder.typicode.com/todos?_limit=5";
@@ -61,10 +72,9 @@ function loadTodosV2() {
       todosTableBody.innerHTML = todoRows.join("");
     });
 }
-
 // Using Fetch Api + Async/Await
-async function loadTodosV3() {
-  const url = "https://jsonplaceholder.typicode.com/todos?_limit=5";
+async function loadTodosV3(count) {
+  const url = `https://jsonplaceholder.typicode.com/todos?_limit=${count}`;
   const response = await fetch(url);
   const todos = await response.json();
   const todoRows = todos.map((todo) => {
