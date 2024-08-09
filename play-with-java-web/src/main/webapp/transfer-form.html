@@ -30,14 +30,14 @@
                 Transfer Form
               </div>
               <div class="card-body">
-                <form action="transfer" method="post">
+                <form id="txr-form" action="transfer" method="post">
                      <div class="mb-3">
-                          <label for="fromAccountId" class="form-label">From Account Id</label>
-                          <input type="text" class="form-control" id="fromAccountId" name="fromAccountId">
+                          <label for="fromAccountId" class="form-label">From Account Number</label>
+                          <input type="text" class="form-control" id="fromAccountId" name="fromAccountNumber">
                      </div>
                      <div class="mb-3">
-                          <label for="toAccountId" class="form-label">To Account Id</label>
-                          <input type="text" class="form-control" id="toAccountId" name="toAccountId">
+                          <label for="toAccountId" class="form-label">To Account Number</label>
+                          <input type="text" class="form-control" id="toAccountId" name="toAccountNumber">
                      </div>
                      <div class="mb-3">
                           <label for="amount" class="form-label">Amount</label>
@@ -49,6 +49,23 @@
        </div>
     </div>
 </div>
+
+<script>
+    // Your JavaScript code here
+    const transferForm = document.getElementById('txr-form');
+    transferForm.addEventListener('submit',e=>{
+        e.preventDefault();
+        const fromAccountId = transferForm['fromAccountId'].value;
+        const toAccountId = transferForm['toAccountId'].value;
+        const amount = transferForm['amount'].value;
+        if(fromAccountId=="" || toAccountId=="" || amount==""){
+            alert('Please fill all the fields');
+            return;
+        }else{
+            transferForm.submit();
+        }
+    });
+</script>
 
 
 </body>
